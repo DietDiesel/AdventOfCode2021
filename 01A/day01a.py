@@ -15,7 +15,4 @@ while i < len(lines) - 1:
         count = count + 1
     i = i + 1
 
-# if lines[i] < lines[len(lines)]:
-#     count = count + 1
-
 print("final count is", count)
