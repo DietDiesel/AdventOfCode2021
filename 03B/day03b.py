@@ -1,31 +1,24 @@
-import operator
 
 diag = []
 
 with open("03A\day03input.txt") as f:
     diag = f.readlines()
 
-i = 0
-gamma = ""
-epsilon = ""
-while i < (int(len(diag[0])) - 1):
-    
-    columnTotal = 0
+targetList = []
+
+for col in diag[0]:
     for row in diag:
-        columnTotal = columnTotal + int(row[i:i + 1])
-    
-    if columnTotal > (int(len(diag)) / 2):
-        gamma += "1"
-    else:
-        gamma += "0"
+        
+        onesList = []
+        zerosList = []
+        
+        if row[col:col + 1] == 1:
+            onesList.append(line)
+        else:
+            zerosList.append(line)
 
-    if columnTotal < (int(len(diag)) / 2):
-        epsilon += "1"
+    if len(onesList) > len(zerosList):
+        targetList = onesList
     else:
-        epsilon += "0"
-    
-    i += 1
+        targetList = zerosList
 
-gamma = int(gamma, 2)
-epsilon = int(epsilon, 2)
-print(gamma * epsilon)
