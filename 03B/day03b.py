@@ -13,9 +13,9 @@ for col in diag[0]:
         zerosList = []
         
         if row[col:col + 1] == 1:
-            onesList.append(line)
+            onesList.append(row)
         else:
-            zerosList.append(line)
+            zerosList.append(row)
 
     if len(onesList) > len(zerosList):
         targetList = onesList
